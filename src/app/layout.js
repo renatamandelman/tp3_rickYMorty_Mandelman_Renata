@@ -1,16 +1,5 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Rick And Morty",
@@ -19,10 +8,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
-        <Navbar/>
-        {children}
+    <html lang="en" className="h-full">
+      <body
+        className=" z-0 h-full  bg-cover bg-center bg-no-repeat "
+        style={{ backgroundImage: "url('/assets/background.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/50 z-0 pointer-events-none" />
+        <main className="relative z-20">
+          <Navbar />
+          {children}
+        </main>
       </body>
     </html>
   );

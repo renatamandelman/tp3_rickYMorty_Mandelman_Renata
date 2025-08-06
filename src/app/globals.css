@@ -3,11 +3,19 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #043c6e;
+    --background: #6b7132;
   }
 }
 
 body {
   background: var(--background);
+   /* background-image: url("/assets/background.jpg");
+  background-position: center; */
   font-family: Arial, Helvetica, sans-serif;
+}
+@font-face {
+  font-family: 'MiFuente';
+  src: url('/assets/get_schwifty.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }

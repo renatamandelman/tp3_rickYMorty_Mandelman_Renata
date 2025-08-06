@@ -24,6 +24,21 @@ const Navbar = () => {
      })
   return (
     <>
+    <nav
+        className={`fixed top-0 left-0 h-screen  px-1 py-4  text-white  z-1
+  
+  md:translate-x-0 md:flex md:flex-col md:items-center`}
+      >
+      <div>
+         <Link href="/">
+          <Image
+            src="/assets/icon.png"
+            alt="Rick icon"
+            width={70}
+            height={70}
+          />
+        </Link>
+      </div>
       <div className="fixed top-1/2 left-4 text-[#88e23b] -translate-y-1/2 flex flex-col items-center gap-4 bg-white/10 backdrop-blur-md p-3 rounded-lg shadow-md z-50">
         <Link href={`${data}/character`}>
           <Image
@@ -67,6 +82,7 @@ const Navbar = () => {
           </svg>
         </Link>
       </div>
+      </nav>
     </>
   );
 };

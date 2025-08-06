@@ -25,7 +25,10 @@ const CharactersContainer = () => {
   }, [getCharacters]);
 
   return (
+    <div className="flex justify-center items-center flex-col">
+    <h1 style={{ fontFamily: 'MiFuente' }} className="text-[#88e23b] text-6xl m-10 uppercase font-MiFuente text-shadow-lg text-shadow-[#c7fa6c]">Characters</h1>
     <CharacterGrid characters={characters}/>
+    </div>
   )
 }
 
