@@ -14,8 +14,10 @@ const CharacterInfo = ({ id }) => {
     const api_key = `https://rickandmortyapi.com/api/character/`;
     const getCharacter = async () => {
       try {
+        setLoading(true);
         const response = await axios.get(`${api_key}${id}`);
         setCharacter(response.data);
+        setLoading(false); 
       } catch (error) {
         console.log("Error fetching Character:", error);
         setError(true);
