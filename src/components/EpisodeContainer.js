@@ -2,6 +2,7 @@
 import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import EpisodeGrid from "@/components/EpisodeGrid";
+import Loading from "./Loading";
 
 const EpisodesContainer = () => {
   const BASE_URL = `https://rickandmortyapi.com/api/episode`;
@@ -25,11 +26,16 @@ const EpisodesContainer = () => {
   }, [getEpisodes]);
 
   return (
+    !loading && (
     <div className="flex justify-center items-center flex-col">
     <h1 style={{ fontFamily: 'MiFuente' }} className="text-[#88e23b] text-6xl m-10 uppercase font-MiFuente text-shadow-lg text-shadow-[#c7fa6c]">Episodes</h1>
     <EpisodeGrid episodes={episodes}/>
+       {loading && <Loading/>}
+
+        {error && "Hubo un error"}
     </div>
   )
+)
 }
 
 export default EpisodesContainer

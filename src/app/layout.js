@@ -13,11 +13,12 @@ export default function RootLayout({ children }) {
         className=" z-0 h-full  bg-cover bg-center bg-no-repeat "
         style={{ backgroundImage: "url('/assets/background.jpg')" }}
       >
-        <div className="absolute inset-0 bg-black/50 z-0 pointer-events-none" />
-        <main className="relative z-20">
+        <div className=" bg-black/50 z-0 ">
+        <main className=" z-20">
           <Navbar />
           {children}
         </main>
+        </div>
       </body>
     </html>
   );

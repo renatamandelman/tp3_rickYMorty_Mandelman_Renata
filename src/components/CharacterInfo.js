@@ -3,10 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Loading from "./Loading";
 
 const CharacterInfo = ({ id }) => {
   const [character, setCharacter] = useState(null);
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const api_key = `https://rickandmortyapi.com/api/character/`;
@@ -26,6 +28,7 @@ const CharacterInfo = ({ id }) => {
   }
 
   return (
+    !loading && (
     <>
       <div className=" flex justify-center items-center min-h-screen">
         <div className="max-w-[600px] bg-[#69ad53] rounded-3xl p-3 flex flex-col md:flex-row gap-3 items-center text-[#fcf4a8]">
@@ -104,7 +107,11 @@ const CharacterInfo = ({ id }) => {
           </div>
         </div>
       </div>
+         {loading && <Loading />}
+
+        {error && "Hubo un error"}
     </>
+    )
   );
 };
 

@@ -2,6 +2,7 @@
 import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import CharacterGrid from "@/components/CharacterGrid";
+import Loading from "./Loading";
 
 const CharactersContainer = () => {
   const BASE_URL = `https://rickandmortyapi.com/api/character`;
@@ -25,10 +26,16 @@ const CharactersContainer = () => {
   }, [getCharacters]);
 
   return (
+    !loading && (
+
     <div className="flex justify-center items-center flex-col">
     <h1 style={{ fontFamily: 'MiFuente' }} className="text-[#88e23b] text-6xl m-10 uppercase font-MiFuente text-shadow-lg text-shadow-[#c7fa6c]">Characters</h1>
     <CharacterGrid characters={characters}/>
+       {loading && <Loading />}
+
+        {error && "Hubo un error"}
     </div>
+    )
   )
 }
 
