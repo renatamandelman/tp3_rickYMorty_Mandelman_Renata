@@ -1,21 +1,22 @@
-import Image from "next/image";
-import Link from "next/link";
-const CharacterCard = ({ character }) => {
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
+
+const LocationCard = ({location}) => {
   return (
-    <>
-      <article className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 w-full max-w-[200px] mx-auto bg-[#69ad53] h-[370px] rounded-3xl p-3 flex flex-col items-end justify-between text-[#fcf4a8]">
+     <article className="col-span-12 sm:col-span-6 md:col-span-4 w-[240px] bg-[#69ad53] h-full rounded-3xl p-3 flex flex-col items-end justify-between text-[#fcf4a8]">
       <div>  <div className="mb-4 flex justify-center">
           <Image
             className="rounded-xl"
-            src={character.image}
+            src={location.image}
             width={200}
             height={200}
-            alt={character.name}
+            alt={location.name}
           />
         </div>
         
-          <h2 className="text-xl">{character.name}</h2>
-          <p>{character.status} </p>
+          <h2 className="text-xl font-semibold">{location.name}</h2>
+          <p>{location.dimension} </p>
           <div className="flex ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -35,19 +36,11 @@ const CharacterCard = ({ character }) => {
                 ></path>
               </g>
             </svg>
-            <p className="ml-1 text-md">{character.origin.name} </p>
+            <p className="ml-1 text-md">{location.type} </p>
           </div>
         </div>
-        <Link
-          className="bg-[#c7fa6c] rounded-2xl w-fit p-3  text-[#69ad53]"
-          href={`character/${character.id}`}
-        >
-          <svg  width={20}
-              height={20} aria-hidden="true" data-prefix="far" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-plus fa-w-12 fa-7x"><path fill="currentColor" d="M368 224H224V80c0-8.84-7.16-16-16-16h-32c-8.84 0-16 7.16-16 16v144H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h144v144c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16V288h144c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16z" class=""></path></svg>
-        </Link>
       </article>
-    </>
-  );
-};
+  )
+}
 
-export default CharacterCard;
+export default LocationCard

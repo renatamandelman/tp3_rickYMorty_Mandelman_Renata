@@ -12,10 +12,10 @@ const HomeContainer = () => {
     <div className="absolute inset-0 bg-black/50  z-0" />
 
 
-      <div className="relative ml-40 lg:z-10 flex flex-col space-y-4 items-start ">
-      <Image src={"/assets/logo.svg"} width={500} height={500} alt="logo" />
+      <div className="relative lg:ml-40 z-10 flex flex-col space-y-4 items-start ">
+      <Image src={"/assets/logo.svg"} width={500} height={500} alt="logo" className="w-[300px] md:w-[400px] lg:w-[500px]"/>
       <p className='ml-5 text-[#a6cccc]'>By Justin Roiland && Dan Harmon</p>
-      <Link href={""} className='ml-5  inline-block px-6 py-2 border border-[#88e23b] text-white rounded hover:bg-[#88e23b] hover:text-black transition'>Episode 1</Link>
+      <Link href={"/episode"} className='ml-5  inline-block px-6 py-2 border border-[#88e23b] text-white rounded hover:bg-[#88e23b] hover:text-black transition'>Episode 1</Link>
         </div>
         
 
